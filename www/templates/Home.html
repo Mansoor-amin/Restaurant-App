@@ -1,0 +1,25 @@
+<ion-view view-title="Restaurants">
+
+  <ion-content>
+
+    <ion-list>
+      <ion-item class="col card"  ng-repeat="restaurant in restaurants">
+
+        <div class="col responsive-sm">
+          <div class="col item item-body">
+            <img class="full-image" style="width: auto; height: 200px" ng-src="{{restaurant.resturantLogo}}">
+            <h2>{{restaurant.name | uppercase}}</h2>
+            <p><b>Adress:</b> {{restaurant.address}}</p>
+            <p><b>Delivery Fee:</b> {{restaurant.deliveryFee}}</p>
+            <p><b>Minimum Order Amount:</b> {{restaurant.minimumOrderAmount}}</p>
+            <p><b>Ratings:</b> {{restaurant.ratings}} Star</p>
+            <button class="button button-block button-positive" ui-sref="app.menu({id :{{restaurant.$id}}})"><i class="icon ion-navicon-round"></i> Go to Menu</button>
+
+          </div>
+
+        </div>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

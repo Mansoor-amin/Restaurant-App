@@ -1,0 +1,46 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear" ui-sref="app.cart">
+          <i class="icon ion-ios-cart"></i>
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar ng-if="user.$id === uid"  class="bar bar-positive item item-avatar">
+      Menu
+      <!--<img src="{{profileImageURL}}">
+      <h2 style="color: #ffffff">{{user.FName}} {{user.LName}}</h2>
+      <p style="color: #ffffff" class="cw">Blood group:<b> {{user.BloodGroup}}</b></p>-->
+
+    </ion-header-bar>
+    <ion-content>
+      <br/>
+      <br/>
+      <br/>
+      <hr style="margin: 0;padding: 0"/>
+      <ion-list>
+        <ion-item menu-close href="#/app/Home">
+          <i class="icon ion-home"></i> Home
+        </ion-item>
+        <ion-item menu-close href="#/app/cart">
+          <i class="icon ion-ios-cart"></i> Cart
+        </ion-item>
+        <ion-item menu-close href="#/app/playlists">
+          <i class="icon ion-gear-a"></i> Settings
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

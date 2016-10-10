@@ -1,0 +1,96 @@
+<ion-view view-title="Cart">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="order in orders"">
+      <div class="row responsive-sm">
+        <div class="col item item-body">
+          <h2>{{order.name | uppercase}}</h2>
+          <p><b>Quantity:</b> {{order.quantity}}</p>
+          <p><b>Price:</b> {{order.price}}</p>
+          <p><b>Category</b> {{order.category}}</p>
+          <p><b>Restaurant</b> {{order.restaurant}}</p>
+          <p><b>Total Price:</b>{{order.price*order.quantity}}</p>
+          <div class="row button-bar">
+            <button class="button button-block button-positive" ng-click="addToCart(order)"><i class="icon ion-ios-cart"></i> Add to Cart</button>
+            <button class="button button-block button-assertive" ng-click="removeToCart(order)"><i class="icon ion-ios-cart"></i> Remove from Cart</button>
+          </div>
+        </div>
+      </div>
+      </ion-item>
+    </ion-list>
+    <div>
+      <h2>Graing total Price</h2>
+      <div class="row button-bar">
+        <button class="button button-block button-positive" ng-click="calculateTotal()">Calculate total</button>
+      </div>
+      <p><b>Graind Total Price: {{grandTotal}}</b></p>
+
+    </div>
+
+    <h2>Order Placement Form</h2>
+    <ion-list>
+      <ion-item>
+        <label class="item item-input item-floating-label">
+          <h2 class="input-label">First name</h2>
+          <input type="text" placeholder="First name"  required="required" ng-model="user.FName">
+        </label>
+      </ion-item>
+      <ion-item>
+        <label class="item item-input item-floating-label">
+          <h2 class="input-label">Last name</h2>
+          <input type="text" placeholder="Last name"  required="required" ng-model="user.LName">
+        </label>
+      </ion-item>
+      <ion-item>
+        <label class="item item-input item-floating-label">
+          <h2 class="input-label">Mobile NO.</h2>
+          <input type="number" placeholder="Mobile NO."  required="required" ng-model="user.MobileNo">
+        </label>
+      </ion-item>
+      <ion-item>
+      <label class="item item-input item-floating-label">
+        <h2 class="input-label">Company</h2>
+        <input type="text" placeholder="Company"  required="required" ng-model="user.Company">
+      </label>
+    </ion-item>
+      <ion-item>
+      <label class="item item-input item-floating-label">
+        <h2 class="input-label">Street</h2>
+        <input type="text" placeholder="Street"  required="required" ng-model="user.Street">
+      </label>
+    </ion-item>
+      <ion-item>
+      <label class="item item-input item-floating-label">
+        <h2 class="input-label">Floor/Unit#</h2>
+        <input type="text" placeholder="Floor/Unit#"  required="required" ng-model="user.FloorUnit">
+      </label>
+    </ion-item>
+      <ion-item>
+      <label class="item item-input item-floating-label">
+        <h2 class="input-label">Areas</h2>
+        <input type="text" placeholder="Areas"  required="required" ng-model="user.Areas">
+      </label>
+    </ion-item>
+      <ion-item>
+      <label class="item item-input item-floating-label">
+        <h2 class="input-label">City</h2>
+        <input type="text" placeholder="City"  required="required" ng-model="user.City">
+      </label>
+    </ion-item>
+      <ion-item>
+        <h2>Additional instructions:</h2>
+        <label class="item item-input item-floating-label">
+          <textarea rows="4"  placeholder="Additional instructions:" ng-model="user.commit"></textarea>
+        </label>
+      </ion-item>
+      <ion-item>
+        <div class="row button-bar">
+          <div class="col"></div>
+          <button class="button  button-positive" ng-click="saveOrder(user)">Submit final Order</button>
+          <div class="col"></div>
+        </div>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

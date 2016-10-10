@@ -1,0 +1,18 @@
+<ion-view view-title="Menue">
+  <ion-content>
+    <ion-item class="col card"ng-repeat="item in menu">
+
+      <div class="row responsive-sm">
+        <div class="col item item-body">
+          <h2>{{item.name | uppercase}}</h2>
+          <p><b>Price:</b> {{item.price}}</p>
+          <p><b>Category</b> {{item.category}}</p>
+          <div class="row button-bar">
+            <button class="button button-block button-positive" ng-click="addToCart(item)"><i class="icon ion-ios-cart"></i> Add to Cart</button>
+            <button class="button button-block button-assertive" ng-click="removeToCart(item)"><i class="icon ion-ios-cart"></i> Remove from Cart</button>
+          </div>
+         </div>
+      </div>
+    </ion-item>
+  </ion-content>
+</ion-view>
